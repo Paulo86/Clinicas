@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{16FF16F1-945B-404B-BFE5-0EF5F2A72299}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kleber.Clinicas.UI.WindowsForms</RootNamespace>
+    <AssemblyName>Kleber.Clinicas.UI.WindowsForms</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Action.cs" />
+    <Compile Include="Cadastro\_Aux\FrmCadastroClienteOnGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro\_Aux\FrmCadastroClienteOnGrid.Designer.cs">
+      <DependentUpon>FrmCadastroClienteOnGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Orcamento\FrmOrcamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Orcamento\FrmOrcamento.Designer.cs">
+      <DependentUpon>FrmOrcamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Orcamento\FrmOrcamentoCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Orcamento\FrmOrcamentoCadastro.Designer.cs">
+      <DependentUpon>FrmOrcamentoCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro\FrmCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro\FrmCliente.Designer.cs">
+      <DependentUpon>FrmCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro\FrmClienteCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro\FrmClienteCadastro.Designer.cs">
+      <DependentUpon>FrmClienteCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro\FrmConsultorioCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro\FrmConsultorioCadastro.Designer.cs">
+      <DependentUpon>FrmConsultorioCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro\FrmConsultorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro\FrmConsultorio.Designer.cs">
+      <DependentUpon>FrmConsultorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro\FrmFormaPagamentoCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro\FrmFormaPagamentoCadastro.Designer.cs">
+      <DependentUpon>FrmFormaPagamentoCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro\FrmFormaPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro\FrmFormaPagamento.Designer.cs">
+      <DependentUpon>FrmFormaPagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro\FrmMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro\FrmMedico.Designer.cs">
+      <DependentUpon>FrmMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro\FrmMedicoCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro\FrmMedicoCadastro.Designer.cs">
+      <DependentUpon>FrmMedicoCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro\FrmServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro\FrmServico.Designer.cs">
+      <DependentUpon>FrmServico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro\FrmServicoCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro\FrmServicoCadastro.Designer.cs">
+      <DependentUpon>FrmServicoCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Cadastro\_Aux\FrmCadastroClienteOnGrid.resx">
+      <DependentUpon>FrmCadastroClienteOnGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Orcamento\FrmOrcamento.resx">
+      <DependentUpon>FrmOrcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Orcamento\FrmOrcamentoCadastro.resx">
+      <DependentUpon>FrmOrcamentoCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro\FrmCliente.resx">
+      <DependentUpon>FrmCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro\FrmClienteCadastro.resx">
+      <DependentUpon>FrmClienteCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro\FrmConsultorioCadastro.resx">
+      <DependentUpon>FrmConsultorioCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro\FrmConsultorio.resx">
+      <DependentUpon>FrmConsultorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro\FrmFormaPagamentoCadastro.resx">
+      <DependentUpon>FrmFormaPagamentoCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro\FrmFormaPagamento.resx">
+      <DependentUpon>FrmFormaPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro\FrmMedico.resx">
+      <DependentUpon>FrmMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro\FrmMedicoCadastro.resx">
+      <DependentUpon>FrmMedicoCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro\FrmServico.resx">
+      <DependentUpon>FrmServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro\FrmServicoCadastro.resx">
+      <DependentUpon>FrmServicoCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kleber.Clinicas.Business\Kleber.Clinicas.Business.csproj">
+      <Project>{ccd39658-a9c7-43ce-9a3e-1c7e38545e4c}</Project>
+      <Name>Kleber.Clinicas.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kleber.Clinicas.Models\Kleber.Clinicas.Models.csproj">
+      <Project>{a7b5a6ff-6c7b-4687-97e8-b95976552e2e}</Project>
+      <Name>Kleber.Clinicas.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estabelecimento.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Detail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fundo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ordemservico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doctor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Doctor2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1416527437_698838-icon-111-search-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pesquisa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\especie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orcamento.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ajusteproduto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editList.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

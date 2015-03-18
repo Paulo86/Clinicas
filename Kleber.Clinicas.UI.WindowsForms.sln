@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20827.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kleber.Clinicas.UI.WindowsForms", "Kleber.Clinicas.UI.WindowsForms\Kleber.Clinicas.UI.WindowsForms.csproj", "{16FF16F1-945B-404B-BFE5-0EF5F2A72299}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kleber.Clinicas.DataAccess", "Kleber.Clinicas.DataAccess\Kleber.Clinicas.DataAccess.csproj", "{E6A9611D-D37B-4F37-B300-893F4F807026}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kleber.Clinicas.Repository", "Kleber.Clinicas.Repository\Kleber.Clinicas.Repository.csproj", "{D4A3EAC9-F036-4DAD-8CFC-DF9C62093ADB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kleber.Clinicas.Models", "Kleber.Clinicas.Models\Kleber.Clinicas.Models.csproj", "{A7B5A6FF-6C7B-4687-97E8-B95976552E2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kleber.Clinicas.Business", "Kleber.Clinicas.Business\Kleber.Clinicas.Business.csproj", "{CCD39658-A9C7-43CE-9A3E-1C7E38545E4C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16FF16F1-945B-404B-BFE5-0EF5F2A72299}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16FF16F1-945B-404B-BFE5-0EF5F2A72299}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16FF16F1-945B-404B-BFE5-0EF5F2A72299}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16FF16F1-945B-404B-BFE5-0EF5F2A72299}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6A9611D-D37B-4F37-B300-893F4F807026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6A9611D-D37B-4F37-B300-893F4F807026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6A9611D-D37B-4F37-B300-893F4F807026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6A9611D-D37B-4F37-B300-893F4F807026}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4A3EAC9-F036-4DAD-8CFC-DF9C62093ADB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4A3EAC9-F036-4DAD-8CFC-DF9C62093ADB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4A3EAC9-F036-4DAD-8CFC-DF9C62093ADB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4A3EAC9-F036-4DAD-8CFC-DF9C62093ADB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7B5A6FF-6C7B-4687-97E8-B95976552E2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7B5A6FF-6C7B-4687-97E8-B95976552E2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7B5A6FF-6C7B-4687-97E8-B95976552E2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7B5A6FF-6C7B-4687-97E8-B95976552E2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCD39658-A9C7-43CE-9A3E-1C7E38545E4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCD39658-A9C7-43CE-9A3E-1C7E38545E4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCD39658-A9C7-43CE-9A3E-1C7E38545E4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCD39658-A9C7-43CE-9A3E-1C7E38545E4C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
