@@ -29,11 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOrcamentoCadastro));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuToolStrip = new System.Windows.Forms.ToolStrip();
             this.btnGravar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnExcluir = new System.Windows.Forms.ToolStripButton();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.grpbPrincipal = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -95,11 +103,21 @@
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnEditarItem = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnExcluirItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.gdvPrincipal = new System.Windows.Forms.DataGridView();
+            this.ID_ORCAMENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_SERVICO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NM_SEQUENCIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DS_SERVICO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QTD_SERVICO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VL_SERVICO_UNIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VL_ACRESCIMO_UNIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VL_DESCONTO_UNIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VL_SERVICO_TOTAL_BRUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VL_DESCONTO_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VL_ACRESCIMO_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VL_SERVICO_TOTAL_LIQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.txtTotalItensGeral = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -141,7 +159,8 @@
             this.btnGravar,
             this.toolStripSeparator1,
             this.btnCancelar,
-            this.toolStripSeparator2});
+            this.toolStripSeparator2,
+            this.btnExcluir});
             this.menuToolStrip.Location = new System.Drawing.Point(0, 0);
             this.menuToolStrip.Name = "menuToolStrip";
             this.menuToolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -157,8 +176,8 @@
             this.btnGravar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnGravar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnGravar.Name = "btnGravar";
-            this.btnGravar.Size = new System.Drawing.Size(128, 42);
-            this.btnGravar.Text = "Salvar orçamento";
+            this.btnGravar.Size = new System.Drawing.Size(54, 42);
+            this.btnGravar.Text = "Salvar";
             this.btnGravar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGravar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
@@ -176,15 +195,30 @@
             this.btnCancelar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(143, 42);
-            this.btnCancelar.Text = "Cancelar orçamento";
+            this.btnCancelar.Size = new System.Drawing.Size(69, 42);
+            this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 45);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.ForeColor = System.Drawing.Color.Black;
+            this.btnExcluir.Image = global::Kleber.Clinicas.UI.WindowsForms.Properties.Resources.delete15;
+            this.btnExcluir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(56, 42);
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // lblTitulo
             // 
@@ -554,6 +588,7 @@
             this.btnListarItens.Text = "Lista itens";
             this.btnListarItens.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnListarItens.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnListarItens.Click += new System.EventHandler(this.btnListarItens_Click);
             // 
             // toolStripSeparator3
             // 
@@ -848,59 +883,54 @@
             this.toolStrip1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnEditarItem,
-            this.toolStripSeparator5,
             this.btnExcluirItem,
             this.toolStripSeparator6});
             this.toolStrip1.Location = new System.Drawing.Point(3, 3);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(692, 45);
+            this.toolStrip1.Size = new System.Drawing.Size(692, 36);
             this.toolStrip1.TabIndex = 50;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // btnEditarItem
-            // 
-            this.btnEditarItem.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarItem.ForeColor = System.Drawing.Color.Black;
-            this.btnEditarItem.Image = global::Kleber.Clinicas.UI.WindowsForms.Properties.Resources.Edit;
-            this.btnEditarItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnEditarItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEditarItem.Name = "btnEditarItem";
-            this.btnEditarItem.Size = new System.Drawing.Size(85, 42);
-            this.btnEditarItem.Text = "Editar Item";
-            this.btnEditarItem.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEditarItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 45);
             // 
             // btnExcluirItem
             // 
             this.btnExcluirItem.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluirItem.ForeColor = System.Drawing.Color.Black;
-            this.btnExcluirItem.Image = global::Kleber.Clinicas.UI.WindowsForms.Properties.Resources.Cancelar;
+            this.btnExcluirItem.Image = global::Kleber.Clinicas.UI.WindowsForms.Properties.Resources.delete15;
             this.btnExcluirItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnExcluirItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnExcluirItem.Name = "btnExcluirItem";
-            this.btnExcluirItem.Size = new System.Drawing.Size(91, 42);
-            this.btnExcluirItem.Text = "Excluir Item";
+            this.btnExcluirItem.Size = new System.Drawing.Size(70, 33);
+            this.btnExcluirItem.Text = "Remover";
             this.btnExcluirItem.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnExcluirItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnExcluirItem.Click += new System.EventHandler(this.btnExcluirItem_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 45);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 36);
             // 
             // gdvPrincipal
             // 
             this.gdvPrincipal.AllowUserToAddRows = false;
             this.gdvPrincipal.AllowUserToDeleteRows = false;
+            this.gdvPrincipal.AllowUserToOrderColumns = true;
             this.gdvPrincipal.BackgroundColor = System.Drawing.Color.White;
             this.gdvPrincipal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gdvPrincipal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_ORCAMENTO,
+            this.ID_SERVICO,
+            this.NM_SEQUENCIA,
+            this.DS_SERVICO,
+            this.QTD_SERVICO,
+            this.VL_SERVICO_UNIT,
+            this.VL_ACRESCIMO_UNIT,
+            this.VL_DESCONTO_UNIT,
+            this.VL_SERVICO_TOTAL_BRUTO,
+            this.VL_DESCONTO_TOTAL,
+            this.VL_ACRESCIMO_TOTAL,
+            this.VL_SERVICO_TOTAL_LIQ});
             this.gdvPrincipal.Location = new System.Drawing.Point(3, 51);
             this.gdvPrincipal.MultiSelect = false;
             this.gdvPrincipal.Name = "gdvPrincipal";
@@ -908,6 +938,132 @@
             this.gdvPrincipal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gdvPrincipal.Size = new System.Drawing.Size(692, 252);
             this.gdvPrincipal.TabIndex = 17;
+            // 
+            // ID_ORCAMENTO
+            // 
+            this.ID_ORCAMENTO.DataPropertyName = "codigoOrcamento";
+            this.ID_ORCAMENTO.HeaderText = "Codigo Orçamento";
+            this.ID_ORCAMENTO.Name = "ID_ORCAMENTO";
+            this.ID_ORCAMENTO.ReadOnly = true;
+            this.ID_ORCAMENTO.Visible = false;
+            // 
+            // ID_SERVICO
+            // 
+            this.ID_SERVICO.DataPropertyName = "codigoServico";
+            this.ID_SERVICO.HeaderText = "Codigo Servico";
+            this.ID_SERVICO.Name = "ID_SERVICO";
+            this.ID_SERVICO.ReadOnly = true;
+            this.ID_SERVICO.Visible = false;
+            // 
+            // NM_SEQUENCIA
+            // 
+            this.NM_SEQUENCIA.DataPropertyName = "sequencia";
+            this.NM_SEQUENCIA.HeaderText = "Sequencia";
+            this.NM_SEQUENCIA.Name = "NM_SEQUENCIA";
+            this.NM_SEQUENCIA.ReadOnly = true;
+            this.NM_SEQUENCIA.Visible = false;
+            // 
+            // DS_SERVICO
+            // 
+            this.DS_SERVICO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.DS_SERVICO.DataPropertyName = "descricaoServico";
+            this.DS_SERVICO.HeaderText = "Descrição do Serviço";
+            this.DS_SERVICO.Name = "DS_SERVICO";
+            this.DS_SERVICO.ReadOnly = true;
+            this.DS_SERVICO.Width = 111;
+            // 
+            // QTD_SERVICO
+            // 
+            this.QTD_SERVICO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.QTD_SERVICO.DataPropertyName = "quantidadeServico";
+            this.QTD_SERVICO.HeaderText = "Quantidade";
+            this.QTD_SERVICO.Name = "QTD_SERVICO";
+            this.QTD_SERVICO.ReadOnly = true;
+            this.QTD_SERVICO.Width = 108;
+            // 
+            // VL_SERVICO_UNIT
+            // 
+            this.VL_SERVICO_UNIT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.VL_SERVICO_UNIT.DataPropertyName = "valorUnitarioServico";
+            dataGridViewCellStyle8.Format = "N2";
+            dataGridViewCellStyle8.NullValue = "0,00";
+            this.VL_SERVICO_UNIT.DefaultCellStyle = dataGridViewCellStyle8;
+            this.VL_SERVICO_UNIT.HeaderText = "Valor Unit.";
+            this.VL_SERVICO_UNIT.Name = "VL_SERVICO_UNIT";
+            this.VL_SERVICO_UNIT.ReadOnly = true;
+            this.VL_SERVICO_UNIT.Width = 94;
+            // 
+            // VL_ACRESCIMO_UNIT
+            // 
+            this.VL_ACRESCIMO_UNIT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.VL_ACRESCIMO_UNIT.DataPropertyName = "valorUnitarioAcrescimo";
+            dataGridViewCellStyle9.Format = "N2";
+            dataGridViewCellStyle9.NullValue = "0,00";
+            this.VL_ACRESCIMO_UNIT.DefaultCellStyle = dataGridViewCellStyle9;
+            this.VL_ACRESCIMO_UNIT.HeaderText = "Valor Acres.";
+            this.VL_ACRESCIMO_UNIT.Name = "VL_ACRESCIMO_UNIT";
+            this.VL_ACRESCIMO_UNIT.ReadOnly = true;
+            this.VL_ACRESCIMO_UNIT.Width = 103;
+            // 
+            // VL_DESCONTO_UNIT
+            // 
+            this.VL_DESCONTO_UNIT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.VL_DESCONTO_UNIT.DataPropertyName = "valorUnitarioDesconto";
+            dataGridViewCellStyle10.Format = "N2";
+            dataGridViewCellStyle10.NullValue = "0,00";
+            this.VL_DESCONTO_UNIT.DefaultCellStyle = dataGridViewCellStyle10;
+            this.VL_DESCONTO_UNIT.HeaderText = "Desconto Unit.";
+            this.VL_DESCONTO_UNIT.Name = "VL_DESCONTO_UNIT";
+            this.VL_DESCONTO_UNIT.ReadOnly = true;
+            this.VL_DESCONTO_UNIT.Width = 117;
+            // 
+            // VL_SERVICO_TOTAL_BRUTO
+            // 
+            this.VL_SERVICO_TOTAL_BRUTO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.VL_SERVICO_TOTAL_BRUTO.DataPropertyName = "valorServicoBruto";
+            dataGridViewCellStyle11.Format = "N2";
+            dataGridViewCellStyle11.NullValue = "0,00";
+            this.VL_SERVICO_TOTAL_BRUTO.DefaultCellStyle = dataGridViewCellStyle11;
+            this.VL_SERVICO_TOTAL_BRUTO.HeaderText = "Total Bruto";
+            this.VL_SERVICO_TOTAL_BRUTO.Name = "VL_SERVICO_TOTAL_BRUTO";
+            this.VL_SERVICO_TOTAL_BRUTO.ReadOnly = true;
+            this.VL_SERVICO_TOTAL_BRUTO.Width = 96;
+            // 
+            // VL_DESCONTO_TOTAL
+            // 
+            this.VL_DESCONTO_TOTAL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.VL_DESCONTO_TOTAL.DataPropertyName = "valorTotalDesconto";
+            dataGridViewCellStyle12.Format = "N2";
+            dataGridViewCellStyle12.NullValue = "0,00";
+            this.VL_DESCONTO_TOTAL.DefaultCellStyle = dataGridViewCellStyle12;
+            this.VL_DESCONTO_TOTAL.HeaderText = "Total Desconto";
+            this.VL_DESCONTO_TOTAL.Name = "VL_DESCONTO_TOTAL";
+            this.VL_DESCONTO_TOTAL.ReadOnly = true;
+            this.VL_DESCONTO_TOTAL.Width = 119;
+            // 
+            // VL_ACRESCIMO_TOTAL
+            // 
+            this.VL_ACRESCIMO_TOTAL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.VL_ACRESCIMO_TOTAL.DataPropertyName = "valorTotalAcrescimo";
+            dataGridViewCellStyle13.Format = "N2";
+            dataGridViewCellStyle13.NullValue = "0,00";
+            this.VL_ACRESCIMO_TOTAL.DefaultCellStyle = dataGridViewCellStyle13;
+            this.VL_ACRESCIMO_TOTAL.HeaderText = "Total Acres.";
+            this.VL_ACRESCIMO_TOTAL.Name = "VL_ACRESCIMO_TOTAL";
+            this.VL_ACRESCIMO_TOTAL.ReadOnly = true;
+            this.VL_ACRESCIMO_TOTAL.Width = 101;
+            // 
+            // VL_SERVICO_TOTAL_LIQ
+            // 
+            this.VL_SERVICO_TOTAL_LIQ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.VL_SERVICO_TOTAL_LIQ.DataPropertyName = "valorTotalServicoLiquido";
+            dataGridViewCellStyle14.Format = "N2";
+            dataGridViewCellStyle14.NullValue = "0,00";
+            this.VL_SERVICO_TOTAL_LIQ.DefaultCellStyle = dataGridViewCellStyle14;
+            this.VL_SERVICO_TOTAL_LIQ.HeaderText = "Total Liquido";
+            this.VL_SERVICO_TOTAL_LIQ.Name = "VL_SERVICO_TOTAL_LIQ";
+            this.VL_SERVICO_TOTAL_LIQ.ReadOnly = true;
+            this.VL_SERVICO_TOTAL_LIQ.Width = 107;
             // 
             // tabPage3
             // 
@@ -1182,8 +1338,6 @@
         private System.Windows.Forms.TextBox txtCodigoServico;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton btnEditarItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton btnExcluirItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.DataGridView gdvPrincipal;
@@ -1221,5 +1375,18 @@
         private System.Windows.Forms.ComboBox cbbTipoDesconto;
         private System.Windows.Forms.TextBox txtNumeroFicha;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ToolStripButton btnExcluir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_ORCAMENTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_SERVICO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NM_SEQUENCIA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DS_SERVICO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QTD_SERVICO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VL_SERVICO_UNIT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VL_ACRESCIMO_UNIT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VL_DESCONTO_UNIT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VL_SERVICO_TOTAL_BRUTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VL_DESCONTO_TOTAL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VL_ACRESCIMO_TOTAL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VL_SERVICO_TOTAL_LIQ;
     }
 }

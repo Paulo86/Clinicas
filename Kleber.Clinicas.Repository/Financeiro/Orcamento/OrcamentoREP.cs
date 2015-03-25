@@ -42,5 +42,39 @@ namespace Kleber.Clinicas.Repository.Financeiro.Orcamento
                 throw;
             }
         }
+
+        public String Cancelar(int idOrcamento)
+        {
+            try
+            {
+                AcessoSqlServer aSql = new AcessoSqlServer();
+                aSql.LimparParametros();
+                aSql.AdicionarParametros("@ID_ORCAMENTO", idOrcamento);
+                //
+                return aSql.Persistencia("USP_ORCAMENTO_CANCELAR");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public String Delete(int idOrcamento)
+        {
+            try
+            {
+                AcessoSqlServer aSql = new AcessoSqlServer();
+                aSql.LimparParametros();
+                aSql.AdicionarParametros("@ID_ORCAMENTO", idOrcamento);
+                //
+                return aSql.Persistencia("USP_ORCAMENTO_DEL");
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
     }
 }

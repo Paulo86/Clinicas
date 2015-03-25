@@ -13,6 +13,7 @@ namespace Kleber.Clinicas.UI.WindowsForms.Cadastro.Financeiro.Orcamento
     public partial class FrmOrcamentoCadastro : Form
     {
         Action action = new Action();
+        String Status = string.Empty;
         //
         //Méto carregar Status. carrega o comboBox com os tipos de status
         private void carregarStatus()
@@ -148,6 +149,7 @@ namespace Kleber.Clinicas.UI.WindowsForms.Cadastro.Financeiro.Orcamento
         public FrmOrcamentoCadastro(Action action)
         {
             InitializeComponent();
+            this.gdvPrincipal.AutoGenerateColumns = false;
             //
             this.action = action;
             //
@@ -390,6 +392,37 @@ namespace Kleber.Clinicas.UI.WindowsForms.Cadastro.Financeiro.Orcamento
                 throw;
             }
         }
+        //
+        //Método para carregar os itens do Orçamento no grid de Itens
+        private void carregarItensOrcamento()
+        {
+            try
+            {
+                int idOrcamento = Convert.ToInt32(this.txtCodigoOrcamento.Text);
+                this.gdvPrincipal.DataSource = new OrcamentoItemBUS().itensOrcamento(idOrcamento).Select(x => new
+                {
+                    //
+                    codigoOrcamento = x.Orcamento.CodigoOrcamento,
+                    codigoServico = x.Servico.CodigoServico,
+                    descricaoServico = x.Servico.Descricao,
+                    quantidadeServico = x.Quantidade,
+                    valorUnitarioServico = x.Servico.Valor,
+                    valorUnitarioAcrescimo = x.AcrescimoValor,
+                    valorUnitarioDesconto = x.DescontoValor,
+                    valorServicoBruto = x.Orcamento.ValorTotalBruto,
+                    valorTotalDesconto = x.Orcamento.ValorTotalDesconto,
+                    valorTotalAcrescimo = x.Orcamento.ValorTotalAcrescimo,
+                    valorTotalServicoLiquido = x.Orcamento.ValorTotalLiquido,
+                    sequencia = x.Sequencia
+                    //
+                }).ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         private void cbbCliente_SelectedValueChanged(object sender, EventArgs e)
         {
             if (this.cbbCliente.SelectedIndex != -1)
@@ -536,7 +569,9 @@ namespace Kleber.Clinicas.UI.WindowsForms.Cadastro.Financeiro.Orcamento
                 orcamentoBUS.validarOrcamento(this.LoadOrcamentoMOD());
                 String retorno = orcamentoBUS.Inserir(this.LoadOrcamentoMOD());
                 this.txtCodigoOrcamento.Text = retorno;
-                //MessageBox.Show(retorno);
+                this.Status = "confirmado";
+                //MessageBox.Show(retorno);                      
+
             }
             catch (Exception ex)
             {
@@ -550,10 +585,139 @@ namespace Kleber.Clinicas.UI.WindowsForms.Cadastro.Financeiro.Orcamento
             {
                 this.GravarItem();
                 this.updateTotais();
+                this.carregarItensOrcamento();
+                this.Status = "gravado";
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Alerta de Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnExcluirItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.gdvPrincipal.Rows.Count > 0)
+                {
+                    if (this.gdvPrincipal.SelectedRows.Count > 0)
+                    {
+                        DialogResult dialog = MessageBox.Show("Deseja realmente retirar esse item do Orçamento ?", "Pergunta",
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                        //
+                        if (dialog == DialogResult.Yes)
+                        {
+                            int idOrcamento = Convert.ToInt32(gdvPrincipal.CurrentRow.Cells[0].Value);
+                            int idServico = Convert.ToInt32(gdvPrincipal.CurrentRow.Cells[1].Value);
+                            int sequencia = Convert.ToInt32(gdvPrincipal.CurrentRow.Cells[2].Value);
+                            //
+                            OrcamentoMOD orcamentoMOD = new OrcamentoItemBUS().Delete(idOrcamento, sequencia, idServico);
+                            if (orcamentoMOD != null)
+                            {
+                                this.carregarItensOrcamento();
+                                this.txtTotalBrutoGeral.Text = orcamentoMOD.ValorTotalBruto.ToString("N2");
+                                this.txtTotalLiquidoGeral.Text = orcamentoMOD.ValorTotalLiquido.ToString("N2");
+                                this.txtTotalAcrescimoGeral.Text = orcamentoMOD.ValorTotalAcrescimo.ToString("N2");
+                                this.txtTotalDescontoGeral.Text = orcamentoMOD.ValorTotalDesconto.ToString("N2");
+                                this.txtTotalItensGeral.Text = orcamentoMOD.QuantidadeItens.ToString();
+                            }
+                            else
+                            {
+                                throw new Exception("Erro desconhecido !");
+                            }
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível Excluir item da lista\nDetalhes: " + ex.Message,
+                    "Alerta de Erro",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnListarItens_Click(object sender, EventArgs e)
+        {
+            this.tabControl1.SelectedTab = tabPage1;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult dialog = MessageBox.Show("Deseja realmente cancelar este Orçamento ?", "Pergunta", 
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                //
+                if (dialog == DialogResult.No)
+                {
+                    return;
+                }
+                else
+                {
+                    int idOrcamento = Convert.ToInt32(this.txtCodigoOrcamento.Text);
+                    var retorno = String.Empty;
+                    var negocios = new OrcamentoBUS();
+                    retorno = negocios.Cancelar(idOrcamento);
+                    //
+                    if (Char.IsNumber(retorno, 0))
+                    {
+                        MessageBox.Show("Orçamento cancelado com sucesso !", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);                        
+                    }
+                    else
+                    {
+                        throw new Exception(retorno);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cancelar Orçamento !\nDetalhes: " + ex.Message, "Alerta de Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }                    
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult dialog = MessageBox.Show("Atenção !\nOs dados do Orçamento excluido não poderão mais serem recuperados.\n" +
+                    "Deseja continuar com o processo de exlusão deste Orçamento ?", "Pergunta",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                //
+                if (dialog == DialogResult.No)
+                {
+                    return;
+                }
+                else
+                {
+                    int idOrcamento = Convert.ToInt32(this.txtCodigoOrcamento.Text);
+                    var retorno = String.Empty;
+                    var negocios = new OrcamentoBUS();
+                    retorno = negocios.Delete(idOrcamento);
+                    //
+                    if (Char.IsNumber(retorno, 0))
+                    {
+                        MessageBox.Show("Orçamento Excluido com sucesso !", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        throw new Exception(retorno);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao Excluir Orçamento !\nDetalhes: " + ex.Message, "Alerta de Erro",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

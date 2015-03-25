@@ -31,5 +31,7 @@ namespace Kleber.Clinicas.Models.Financeiro.Orcamento
 
         public Decimal ValorTotalItem { get; set; }
 
+        public int Sequencia { get; set; }
+
     }
 }

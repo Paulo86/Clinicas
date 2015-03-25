@@ -124,11 +124,11 @@
   <data name="1416527437_698838-icon-111-search-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1416527437_698838-icon-111-search-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="editList" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editList.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="doctor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\doctor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="orcamento" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\orcamento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="especie" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\especie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,6 +154,9 @@
   <data name="Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="orcamento" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orcamento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ajusteproduto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ajusteproduto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -166,7 +169,7 @@
   <data name="Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="editList" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\editList.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="delete15" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete15.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

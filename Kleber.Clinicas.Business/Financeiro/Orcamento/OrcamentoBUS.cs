@@ -57,5 +57,31 @@ namespace Kleber.Clinicas.Business.Financeiro.Orcamento
                 throw;
             }
         }
+
+        public String Cancelar(int idOrcamento)
+        {
+            try
+            {
+                return new OrcamentoREP().Cancelar(idOrcamento);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+
+        public String Delete(int idOrcamento)
+        {
+            try
+            {
+                return new OrcamentoREP().Delete(idOrcamento);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
     }
 }
